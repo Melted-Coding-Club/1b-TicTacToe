@@ -13,12 +13,17 @@ current_player = 0
 player_symbols = ['x', 'o']
 
 print_board(board)
+while True:
+    user_input = input("chose your square: ")
 
-user_input = input("chose your square: ")
+    if board[int(user_input) - 1] == ' ':
+        board[int(user_input) - 1] = player_symbols[current_player]
+    else:
+        print("slot already filled")
+        continue
 
-if board[int(user_input) - 1] == ' ':
-    board[int(user_input) - 1] = player_symbols[current_player]
-else:
-    print("slot already filled")
-
-print_board(board)
+    if current_player == 0:
+        current_player = 1
+    elif current_player == 1:
+        current_player = 0
+    print_board(board)

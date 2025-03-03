@@ -15,6 +15,17 @@ player_symbols = ['x', 'o']
 print_board(board)
 while True:
     user_input = input("chose your square: ").lower()
+    if user_input not in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
+        if user_input not in ['a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3']:
+            print("invalid input")
+            continue
+
+        if user_input[0] == 'a':
+            user_input = int(user_input[1]) + 0
+        elif user_input[0] == 'b':
+            user_input = int(user_input[1]) + 3
+        elif user_input[0] == 'c':
+            user_input = int(user_input[1]) + 6
 
     if board[int(user_input) - 1] == ' ':
         board[int(user_input) - 1] = player_symbols[current_player]

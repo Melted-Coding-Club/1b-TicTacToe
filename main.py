@@ -1,8 +1,6 @@
-# Save the board as a list of strings. When Empty they contain a space, Otherwise they are filled wit x or o
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 
-# Use a function to print the board as we will need to do this many times
 def print_board(board):
     print(f' {board[0]} | {board[1]} | {board[2]} ')
     print('---|---|---')
@@ -10,5 +8,17 @@ def print_board(board):
     print('---|---|---')
     print(f' {board[6]} | {board[7]} | {board[8]} ')
 
-# For a function to run we need to call it. This will print out empty board
+
+current_player = 0
+player_symbols = ['x', 'o']
+
+print_board(board)
+
+user_input = input("chose your square: ")
+
+if board[int(user_input) - 1] == ' ':
+    board[int(user_input) - 1] = player_symbols[current_player]
+else:
+    print("slot already filled")
+
 print_board(board)

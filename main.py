@@ -36,7 +36,7 @@ def check_win(board):
             return True
     return False
 
-# Main game loop
+
 print_board(board)
 while True:
     user_input = input("Choose your square: ").lower()
